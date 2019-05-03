@@ -6,10 +6,24 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css" type="text/css">
 
     <title>IG Photo Feed w/ Bootstrap</title>
 
-<style>.col-4{background:black !important}</style>
+<style>
+
+button.btn.nav-link.active {
+    background-color: gray !important;
+    color: white !important;
+}
+button.btn.nav-link {
+    color: gray !important;
+}
+#pills-multi-view img {
+    width: 100% !important;
+}
+
+</style>
 
 </head>
 <body>
@@ -26,28 +40,28 @@
         <div class="col-md-3">
 
 <!--  modal  -->
-            <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#createNewPost">Create new post</button>
+            <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#createNewPost">Create post</button>
 
             <div class="modal fade" id="createNewPost" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
 
-                <div class="modal-body mb-2">
-                    <form>
-                    <div class="form-group">
-                        <textarea class="form-control" id="message-text"></textarea>
+                    <div class="modal-body mb-2">
+                        <form>
+                        <div class="form-group">
+                            <textarea class="form-control" id="message-text"></textarea>
+                        </div>
+                        </form>
+                        <i class="fas fa-camera fa-1x border btn"></i>
+                        <i class="fas fa-map-marker-alt fa-1x border btn"></i>
                     </div>
-                    </form>
-                    <i class="fas fa-camera fa-1x border btn"></i>
-                    <i class="fas fa-map-marker-alt fa-1x border btn"></i>
-                </div>
 
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-light border btn-sm" data-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-success btn-sm">Publish</button>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light border btn-sm" data-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-success btn-sm">Publish</button>
+                    </div>
+                    </div>
                 </div>
-                </div>
-            </div>
             </div>
 <!--  modal  -->
 
@@ -68,52 +82,119 @@
         </div>
     </div> <!-- top row -->
 
-    <div class="text-center p-2">
-        <button class="btn btn-secondary">
-            <i class="fas fa-th fa-xs"></i>
-        </button>
-        <button class="btn text-secondary">
-            <i class="fas fa-stop fa-xs"></i>
-        </button>
-    </div>
+    <div class="row text-center p-2 bg-white">
+        <div class="col-5"></div>
+<!-- pills -->
+        <div class="col-2">
+
+            <ul class="nav nav-pills text-center" id="pills-tab" role="tablist">
+                <li class="nav-item text-center">
+                    <button class="btn nav-link active" data-toggle="pill" href="#pills-multi-view" role="tab" aria-selected="false">
+                        <i class="fas fa-th fa-xs"></i>
+                    </button>
+                </li>
+
+                <li class="nav-item">
+                    <button class="btn nav-link" data-toggle="pill" href="#pills-single-view" role="tab" aria-selected="true">
+                        <i class="fas fa-stop fa-xs"></i>
+                    </button>
+                </li>
+            </ul>
+
+        </div>
+<!-- pills -->
+        <div class="col-5"></div>
+    </div> <!-- center pill buttons div -->
 
 </div> <!-- container-fluid from top -->
 
-<div class="container-fluid">
 
-    <div class="row">
-        <div class="col-4  border border-white">
-            <img src="http://lorempixel.com/400/200">
-        </div>
-        <div class="col-4 bg-dark border border-white">
-            <img src="http://lorempixel.com/400/200">
-        </div>
-        <div class="col-4 bg-dark border border-white">
-            <img src="http://lorempixel.com/400/200">
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-4 bg-dark border border-white">
-            <img src="http://lorempixel.com/400/200">
-        </div>
-        <div class="col-4 bg-dark border border-white">
-            <img src="http://lorempixel.com/400/200">
-        </div>
-        <div class="col-4 bg-dark border border-white">
-            <img src="http://lorempixel.com/400/200">
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-4 bg-dark border border-white">
-            <img src="http://lorempixel.com/400/200">
-        </div>
-        <div class="col-4 bg-dark border border-white">
-            <img src="http://lorempixel.com/400/200">
-        </div>
-        <div class="col-4 bg-dark border border-white">
-            <img src="http://lorempixel.com/400/200">
-        </div>
-    </div>
+<div class="container-fluid p-0">
+
+    <!-- tab pane multi view -->
+    <div class="tab-content" id="pills-tabContent">
+        <div class="tab-pane fade show active" id="pills-multi-view" role="tabpanel">
+
+            <div class="row">
+                <div class="col-4 border p-0">
+                    <img src="http://lorempixel.com/400/200">
+                </div>
+                <div class="col-4 border p-0">
+                    <img src="http://lorempixel.com/400/200">
+                </div>
+                <div class="col-4 border p-0">
+                    <img src="http://lorempixel.com/400/200">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4 border p-0">
+                    <img src="http://lorempixel.com/400/200">
+                </div>
+                <div class="col-4 border p-0">
+                    <img src="http://lorempixel.com/400/200">
+                </div>
+                <div class="col-4 border p-0">
+                    <img src="http://lorempixel.com/400/200">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4 border p-0">
+                    <img src="http://lorempixel.com/400/200">
+                </div>
+                <div class="col-4 border p-0">
+                    <img src="http://lorempixel.com/400/200">
+                </div>
+                <div class="col-4 border p-0">
+                    <img src="http://lorempixel.com/400/200">
+                </div>
+            </div>
+            
+    </div> <!-- tab-pane pill multi view -->
+
+    <!-- tab-pane single view -->
+    <div class="tab-pane fade" id="pills-single-view" role="tabpanel">
+
+        <div class="main">
+
+            <div class="post">
+                <div class="post-header">
+                    <h5>My first photo</h5>
+                    <span>12/14</span>
+                </div>
+                <img src="http://lorempixel.com/400/200">
+                <p>This is my photo of the feed. This is a multi line comment for testing purposes. I am learning to code with<strong><span class="hashtag"></span></strong></p>
+            </div>
+
+            <div class="post">
+                <div class="post-header">
+                    <h5>My first photo</h5>
+                    <span>12/14</span>
+                </div>
+                <img src="http://lorempixel.com/400/200">
+                <p>This is my photo of the feed. This is a multi line comment for testing purposes. I am learning to code with<strong><span class="hashtag"></span></strong></p>
+            </div>
+
+            <div class="post">
+                <div class="post-header">
+                    <h5>My first photo</h5>
+                    <span>12/14</span>
+                </div>
+                <img src="http://lorempixel.com/400/200">
+                <p>This is my photo of the feed. This is a multi line comment for testing purposes. I am learning to code with<strong><span class="hashtag"></span></strong></p>
+            </div>
+
+            <div class="post">
+                <div class="post-header">
+                    <h5>My first photo</h5>
+                    <span>12/14</span>
+                </div>
+                <img src="http://lorempixel.com/400/200">
+                <p>This is my photo of the feed. This is a multi line comment for testing purposes. I am learning to code with<strong><span class="hashtag"></span></strong></p>
+            </div>
+
+        </div> <!-- main post -->
+
+    </div> <!-- tab-pane single view -->
 
 </div> <!-- container-fluid for pics -->
 

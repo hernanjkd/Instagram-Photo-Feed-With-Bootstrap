@@ -1,0 +1,40 @@
+.main{
+	background: #eeeeee;
+	width: 100%;
+	margin: auto;
+}
+.post{
+	margin: auto;
+	width: 460px;
+	padding-bottom: 48px;
+    padding-top: 20px;
+}
+.post-header{
+	background: white;
+	width: 428px;
+	display: inline-block;
+	padding: 11px;
+}
+.post-header h5{
+	float: left;
+}
+.post-header span{
+	float: right;
+	font-size: 12px;
+	color: #bbbbbb;
+}
+.post img{
+	width: 428px;
+	height: 200px;
+	margin-top: -5px;
+	margin-bottom: -4px;
+}
+.post p{
+	background: white;
+	font-size: 12px;
+	padding: 13px;
+	width: 428px;
+}
+.hashtag:before{
+	content: " #BreatheCode";
+}
